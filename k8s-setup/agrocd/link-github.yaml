@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app               # Name of your application
+  namespace: argocd          # Namespace where ArgoCD is installed
+spec:
+  project: default           # ArgoCD project, usually "default"
+  source:
+    repoURL: https://github.com/your-username/your-repo.git # GitHub repository URL
+    targetRevision: main     # Branch or tag in the repository
+    path: k8s-manifests      # Path in the repository to your Kubernetes manifests
+  destination:
+    server: https://kubernetes.default.svc  # Kubernetes API server (default cluster)
+    namespace: dev            # Namespace to deploy the app
+  syncPolicy:
+    automated:               # Optional: Enables automated synchronization
+      prune: true            # Prunes resources not defined in Git
+      selfHeal: true         # Automatically fixes drift
+---

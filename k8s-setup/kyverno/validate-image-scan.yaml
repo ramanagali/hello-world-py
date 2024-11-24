@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: validate-image-vulnerabilities
+spec:
+  rules:
+    - name: validate-image-scan
+      match:
+        resources:
+          kinds:
+            - Pod
+      validate:
+        message: "Image does not meet vulnerability scanning criteria."
+        verifyImages:
+          - image: "*"
+            attestations:
+              - predicateType: "vuln/v1"
+                conditions:
+                  all:
+                    - key: "{{ .vulnerabilities.critical }}"
+                      operator: LessThanOrEquals
+                      value: 0

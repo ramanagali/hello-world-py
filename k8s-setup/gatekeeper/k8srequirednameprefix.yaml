@@ -1,0 +1,32 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequirednameprefix
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequiredNamePrefix
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequirednameprefix
+
+        violation[{"msg": msg}] {
+          provided_name := input.review.object.metadata.name
+          required_prefix := "dev-"
+          
+          not startswith(provided_name, required_prefix)
+          
+          msg := sprintf("The resource name must start with '%s'. Provided: %s", [required_prefix, provided_name])
+        }
+---
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredNamePrefix
+metadata:
+  name: require-name-prefix
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod", "Service", "Deployment"]

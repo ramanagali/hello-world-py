@@ -1,0 +1,72 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: dev
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-to-app1
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: app1
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name=ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+  - {}  
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-to-app2
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: app2
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name=ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+  - {}  
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: restrict-app1-to-app2
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: app2
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: app1
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+  - {}  
+---
+

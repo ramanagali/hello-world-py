@@ -1,0 +1,199 @@
+name: Release CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set ProjectName and Build Number
+        id: projectinfo
+        uses: actions/checkout@v3
+        with:
+          name: ${{ github.repository }}
+          version: "Build Number: ${{ github.run_number }}"
+
+  sonarqube:
+    name: SonarQube Scan
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+
+      - name: SonarQube Scanner
+        uses: SonarSource/sonarqube-scan-action@v1.4
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  gitleaks:
+    name: GitLeaks Scan
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run GitLeaks
+        uses: zricethezav/gitleaks-action@v2
+        with:
+          args: --path . --report-format json --report-path gitleaks-report.json
+
+  snyk:
+    name: Snyk Vulnerability Scan
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Authenticate Snyk CLI
+        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+
+      - name: Snyk Test
+        run: snyk test
+
+      - name: Snyk Monitor
+        run: snyk monitor
+
+  syft:
+    name: Generate SBOM with Syft
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Install Syft
+        run: curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Generate SBOM
+        run: syft . -o json > sbom.json
+
+  grype:
+    name: Grype Vulnerability Scan
+    runs-on: ubuntu-latest
+    needs: syft
+    steps:
+      - name: Install Grype
+        run: curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Grype Scan
+        run: grype sbom:sbom.json > grype-report.txt
+
+  build_docker:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t app1-image:latest -f App1-Dockerfile .
+
+  trivy:
+    name: Trivy Scan
+    runs-on: ubuntu-latest
+    needs: build_docker
+    steps:
+      - name: Install Trivy
+        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/scripts/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Trivy Scan
+        run: trivy image --format json --output trivy-report.json app1-image:latest
+
+  owasp_zap:
+    name: OWASP ZAP Security Test
+    runs-on: ubuntu-latest
+    needs: trivy
+    steps:
+      - name: Run OWASP ZAP
+        uses: zaproxy/action-full-scan@v1
+        with:
+          target: "http://localhost:8080"
+          rules-file: ".zap/rules.yaml"
+          context-file: ".zap/context.yaml"
+
+  integration_tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: owasp_zap
+    steps:
+      - name: Run Integration Tests
+        run: |
+          echo "Running integration tests..."
+          ./scripts/run_integration_tests.sh
+
+  push_docker:
+    name: Push Docker Image to Docker Hub
+    runs-on: ubuntu-latest
+    needs: integration_tests
+    steps:
+      - name: Login to Docker Hub
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Tag and Push Docker Image
+        run: |
+          docker tag app1-image:latest ${{ secrets.DOCKER_USERNAME }}/app1-image:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/app1-image:latest
+
+    outputs:
+      name: ${{ steps.projectinfo.outputs.name }}
+      version: ${{ steps.projectinfo.outputs.version }}
+
+  generate_artifacts:
+    name: Generate Artifacts
+    runs-on: ubuntu-latest
+    needs: push_docker
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Package Artifacts
+        run: |
+          mkdir artifacts
+          cp *.json artifacts/
+          cp *.txt artifacts/
+          tar -czvf artifacts.tar.gz artifacts
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: artifacts.tar.gz
+
+  #job
+  update_kube_yaml:
+    name: Update Deployment YAML file with images
+    runs-on: ubuntu-latest
+    needs: push_docker
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Create default namespace folder if not exists
+        run: |
+          mkdir -p ./clusters/k8s-cluster/default
+
+      - name: Print Image Release Version
+        run: echo ${{ secrets.DOCKER_USERNAME }}/${{ needs.push_docker.outputs.name }}:${{ needs.push_docker.outputs.version }}
+
+      - name: Update the deploy1.yaml with new Image
+        run: |
+          sed 's/TAG/${{ needs.push_docker.outputs.version }}/g' ./k8s-resources/deploy1.tmpl > ./clusters/k8s-cluster/default/deploy1.yaml
+          ls -l ./clusters/k8s-cluster/default
+
+      - name: Verify deploy1.yaml image
+        run: |
+          cat ./clusters/k8s-cluster/default/deploy1.yaml | grep -i image

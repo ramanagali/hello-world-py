@@ -1,0 +1,78 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: primary-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    
+    # enable TLS encryption
+    # enforce secure communication
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: "on"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/http2-push-preload: "true"
+
+    # enfore strong ciphers 
+    nginx.ingress.kubernetes.io/ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-prefer-server-ciphers: "true"
+    nginx.ingress.kubernetes.io/ssl-ciphers: "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384"
+
+    # Whitelist trusted IPs if the application does not need public access
+    nginx.ingress.kubernetes.io/whitelist-source-range: "203.0.113.0/24,198.51.100.0/24"
+
+    # Set request rate limits, protect against DDoS
+    nginx.ingress.kubernetes.io/limit-connections: "20"
+    nginx.ingress.kubernetes.io/limit-rps: "10" 
+
+    # Enable logs for debugging
+    nginx.ingress.kubernetes.io/enable-access-log: "true"
+
+    # set more headers
+    ngnix.ingress.kubernetes.io/configuration-snippet: |
+          more_set_headers "X-XSS-Protection:1;mode=block";
+          more_set_headers "Strict-Transport-Security: max-age=3153600; includeSubDomains; preload";
+          more_set_headers "X-Content-Type-Options: nosniff";
+          more_set_headers "Referrer-Policy: no-referrer";
+          more_set_headers "Cache-Control: no-cache,no-store,must-revalidate";
+          more_set_headers "Expires: 0";
+          more_set_headers "Pragma: no-cache";
+          more_set_headers "Server: ABC";
+          if ($custom_header != 'xyz') {
+            return 403;
+          }
+
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: my-app.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app1-service
+            port:
+              number: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: canary-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "80"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: my-app.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app2-service
+            port:
+              number: 4000
