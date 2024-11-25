@@ -3,7 +3,15 @@
 # install an ingress controller like NGINX using Helm
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
-helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace #--wait --debug
+
+#install k8s nginx ingress controller with metrics exposed for prometheus
+helm upgrade -i nginx ingress-nginx/ingress-nginx --create-namespace \
+    --set controller.service.type=NodePort \
+    --set controller.metrics.enabled=true \
+    --set controller.metrics.serviceMonitor.enabled=true \
+    --set controller.metrics.serviceMonitor.additionalLabels.release="prometheus" \
+    --set-string controller.podAnnotations."prometheus\.io/scrape"="true" \
+    --set-string controller.podAnnotations."prometheus\.io/port"="10254"
 
 # cert-manager to automatically issue and manage Let's Encrypt certificates for your domain
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/cert-manager.yaml
