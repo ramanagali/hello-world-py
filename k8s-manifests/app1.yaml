@@ -45,8 +45,8 @@ spec:
     app: app1
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5678
+      port: 3000
+      targetPort: 3000
   type: ClusterIP
 ---
 apiVersion: autoscaling/v2
