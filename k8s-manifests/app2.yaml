@@ -15,6 +15,7 @@ spec:
         app: app2
         env: dev
     spec:
+      serviceAccountName: dev
       containers:
       - name: app2
         image: hashicorp/http-echo:0.2.3
@@ -26,6 +27,27 @@ spec:
           requests:
             memory: "128Mi"
             cpu: "250m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 4000
+            httpHeaders:
+            - name: Custom-Header
+              value: Awesome
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 4000
+            httpHeaders:
+            - name: Custom-Header
+              value: Awesome
+          initialDelaySeconds: 3
+          periodSeconds: 3
 ---
 apiVersion: v1
 kind: Service
