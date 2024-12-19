@@ -423,7 +423,7 @@ Agro CD will be installed in the Centralized & Dedicated Kubernetes Cluster, whi
 
 ### Runtime syscall monitoring using Falco Rules
 
-- Create falco rules to monitor linux system calls
+- Create falco rules to detect and alerts on any behavior that involves making Linux system calls
 
 #### Admission Controllers
 
