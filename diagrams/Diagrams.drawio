@@ -61,16 +61,15 @@
         <mxCell id="yQyS5cBXcZY2YD3Enegk-30" value="push&amp;nbsp;&lt;div&gt;to remote&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="yQyS5cBXcZY2YD3Enegk-16" target="yQyS5cBXcZY2YD3Enegk-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yQyS5cBXcZY2YD3Enegk-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yQyS5cBXcZY2YD3Enegk-37" target="yQyS5cBXcZY2YD3Enegk-38" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="yQyS5cBXcZY2YD3Enegk-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="p2KLFb130XRip5WQmHqW-1" target="yQyS5cBXcZY2YD3Enegk-38" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630.56" y="471" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="yQyS5cBXcZY2YD3Enegk-40" value="&lt;span style=&quot;font-size: 12px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;Secret Scanning&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#CC0000;" parent="yQyS5cBXcZY2YD3Enegk-39" vertex="1" connectable="0">
           <mxGeometry x="-0.087" y="2" relative="1" as="geometry">
             <mxPoint x="4" y="2" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="yQyS5cBXcZY2YD3Enegk-37" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.worldvectorlogo.com/logos/sonarqube.svg;" parent="1" vertex="1">
-          <mxGeometry x="470.56" y="451.44" width="160" height="39.2" as="geometry" />
         </mxCell>
         <mxCell id="DP2jiTC7STrJ-itq0Lv6-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="yQyS5cBXcZY2YD3Enegk-38" target="yQyS5cBXcZY2YD3Enegk-49" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -113,21 +112,6 @@
         <mxCell id="yQyS5cBXcZY2YD3Enegk-66" value="Approver" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.approver;" parent="1" vertex="1">
           <mxGeometry x="250" y="703.5" width="59" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="DP2jiTC7STrJ-itq0Lv6-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="OicyhBoVE_iCZVNI9Z5x-1" target="yQyS5cBXcZY2YD3Enegk-37" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="220" y="470" />
-              <mxPoint x="340" y="470" />
-              <mxPoint x="340" y="471" />
-            </Array>
-            <mxPoint x="160" y="470" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="DP2jiTC7STrJ-itq0Lv6-12" value="&lt;span style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Automated&lt;/span&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Static Code&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Analysis&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="DP2jiTC7STrJ-itq0Lv6-11" vertex="1" connectable="0">
-          <mxGeometry x="0.0226" y="4" relative="1" as="geometry">
-            <mxPoint x="1" as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="ZX_YzBQMie0qy9G1Mtsc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DP2jiTC7STrJ-itq0Lv6-8" target="OicyhBoVE_iCZVNI9Z5x-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -161,6 +145,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="QW9D0piDy3JKAUEb54HW-1" value="AssumeRoleWithWebIdentity" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ZX_YzBQMie0qy9G1Mtsc-2">
+          <mxGeometry x="-0.1827" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="OE7Bx2759FTxIu3JnBgk-7" value="AWS Account" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_account;strokeColor=#CD2264;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#CD2264;dashed=0;" parent="1" vertex="1">
           <mxGeometry x="859.56" y="140" width="250" height="228.00000000000003" as="geometry" />
         </mxCell>
@@ -179,8 +168,21 @@
         <mxCell id="OE7Bx2759FTxIu3JnBgk-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="OE7Bx2759FTxIu3JnBgk-7" source="OE7Bx2759FTxIu3JnBgk-10" target="OE7Bx2759FTxIu3JnBgk-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="Gwq8I47I3nBYAF0u8F-e-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="OicyhBoVE_iCZVNI9Z5x-1" target="p2KLFb130XRip5WQmHqW-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gwq8I47I3nBYAF0u8F-e-4" value="&lt;span style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Automated&lt;/span&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Static Code&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Analysis&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Gwq8I47I3nBYAF0u8F-e-3">
+          <mxGeometry x="-0.1592" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="OicyhBoVE_iCZVNI9Z5x-1" value="Get pipeline&lt;div&gt;credentials&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="186" y="444" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2KLFb130XRip5WQmHqW-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static-00.iconduck.com/assets.00/sonarqube-icon-2048x499-b6mw67zs.png;" vertex="1" parent="1">
+          <mxGeometry x="470" y="449.03" width="180.82" height="44" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -212,9 +214,10 @@
         <mxCell id="rHq_XIFmlFcPWwt6HyXX-1" value="GitHub Actions workflow&#xa;on push " style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.prod.website-files.com/65264f6bf54e751c3a776db1/66d86964333d11e0a1f1da9e_github_actions.png;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="180" y="20" width="78" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="FLBkalhn9c48iVikGoNS-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="fY1YCJaybagAY9zyOnzN-2" target="FLBkalhn9c48iVikGoNS-3" edge="1">
+        <mxCell id="FLBkalhn9c48iVikGoNS-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fY1YCJaybagAY9zyOnzN-2" target="3B1uC-KXJTwkqsEbNb2T-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="414.33000000000004" y="214.04" as="sourcePoint" />
+            <mxPoint x="440" y="305" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FLBkalhn9c48iVikGoNS-13" value="&lt;span style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Automated&lt;/span&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Static Code&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-wrap: wrap; color: rgb(204, 0, 0); font-size: 12px; background-color: rgb(251, 251, 251);&quot;&gt;Analysis&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="FLBkalhn9c48iVikGoNS-12" vertex="1" connectable="0">
@@ -264,16 +267,15 @@
         <mxCell id="Gqd14W3-ECIcyz9NjLz_-1" value="Container Registry" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/containers/Container_Registries.svg;" parent="1" vertex="1">
           <mxGeometry x="868.4" y="650" width="68" height="61" as="geometry" />
         </mxCell>
-        <mxCell id="FLBkalhn9c48iVikGoNS-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FLBkalhn9c48iVikGoNS-3" target="FLBkalhn9c48iVikGoNS-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="FLBkalhn9c48iVikGoNS-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="3B1uC-KXJTwkqsEbNb2T-1" target="FLBkalhn9c48iVikGoNS-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="611.6700000000001" y="305" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="FLBkalhn9c48iVikGoNS-2" value="&lt;span style=&quot;font-size: 12px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;Secret Scanning&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#CC0000;" parent="FLBkalhn9c48iVikGoNS-1" vertex="1" connectable="0">
           <mxGeometry x="-0.087" y="2" relative="1" as="geometry">
             <mxPoint x="4" y="2" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="FLBkalhn9c48iVikGoNS-3" value="SAST" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.worldvectorlogo.com/logos/sonarqube.svg;" parent="1" vertex="1">
-          <mxGeometry x="449.33000000000004" y="284.44" width="160" height="39.2" as="geometry" />
         </mxCell>
         <mxCell id="FLBkalhn9c48iVikGoNS-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FLBkalhn9c48iVikGoNS-6" target="FLBkalhn9c48iVikGoNS-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -359,13 +361,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="fY1YCJaybagAY9zyOnzN-6" value="assume role" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="fY1YCJaybagAY9zyOnzN-5" vertex="1" connectable="0">
+        <mxCell id="fY1YCJaybagAY9zyOnzN-6" value="AssumeRoleWithWebIdentity" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="fY1YCJaybagAY9zyOnzN-5" vertex="1" connectable="0">
           <mxGeometry x="-0.222" y="4" relative="1" as="geometry">
             <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="fY1YCJaybagAY9zyOnzN-2" value="Get pipeline&lt;div&gt;credentials&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="230" y="277" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3B1uC-KXJTwkqsEbNb2T-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static-00.iconduck.com/assets.00/sonarqube-icon-2048x499-b6mw67zs.png;" vertex="1" parent="1">
+          <mxGeometry x="451.67" y="283" width="180.82" height="44" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
