@@ -515,11 +515,8 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="-E65_RxEzlmxlajJ-Pf2-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="820" y="1130" width="170" height="120" as="geometry" />
-        </mxCell>
         <mxCell id="6eMF-F5gttXPWiPwgopi-5" value="s" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="110" y="370" width="930" height="670" as="geometry" />
+          <mxGeometry x="110" y="370" width="930" height="720" as="geometry" />
         </mxCell>
         <mxCell id="uH2XNrUpkTFlzk_03d7L-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="uH2XNrUpkTFlzk_03d7L-1" target="uH2XNrUpkTFlzk_03d7L-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -712,7 +709,7 @@
           <mxGeometry x="120" y="380" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="3PhvUPeRcVgFczAhHvoa-8" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="432.5" y="1130" width="255" height="120" as="geometry" />
+          <mxGeometry x="470" y="1190" width="255" height="120" as="geometry" />
         </mxCell>
         <mxCell id="3PhvUPeRcVgFczAhHvoa-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="3PhvUPeRcVgFczAhHvoa-8" vertex="1">
           <mxGeometry width="255" height="120.00000000000009" as="geometry" />
@@ -723,19 +720,13 @@
         <mxCell id="3PhvUPeRcVgFczAhHvoa-5" value="Grafana" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Grafana.svg;" parent="3PhvUPeRcVgFczAhHvoa-8" vertex="1">
           <mxGeometry x="131.52115384615374" y="28.892455858748015" width="65.48956661316213" height="50.850722311396474" as="geometry" />
         </mxCell>
-        <mxCell id="3PhvUPeRcVgFczAhHvoa-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="3PhvUPeRcVgFczAhHvoa-7" target="6eMF-F5gttXPWiPwgopi-5" edge="1">
+        <mxCell id="3PhvUPeRcVgFczAhHvoa-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.528;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3PhvUPeRcVgFczAhHvoa-7" target="6eMF-F5gttXPWiPwgopi-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3PhvUPeRcVgFczAhHvoa-11" value="monitor" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="3PhvUPeRcVgFczAhHvoa-10" vertex="1" connectable="0">
+        <mxCell id="3PhvUPeRcVgFczAhHvoa-11" value="monitor" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1" parent="3PhvUPeRcVgFczAhHvoa-10" vertex="1" connectable="0">
           <mxGeometry x="-0.1027" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="-E65_RxEzlmxlajJ-Pf2-2" value="Teams&#xa;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_512px.png;" parent="1" vertex="1">
-          <mxGeometry x="840" y="1167.5" width="53.67" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="-E65_RxEzlmxlajJ-Pf2-4" value="Slack" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.freebiesupply.com/logos/thumbs/2x/slack-logo-thumb.png;" parent="1" vertex="1">
-          <mxGeometry x="920" y="1167.5" width="60" height="45" as="geometry" />
         </mxCell>
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-5" value="Nginx&#xa;Ingress Controller" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://docs.nginx.com/images/icons/NGINX-Ingress-Controller-product-icon.svg;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="508.6" y="250" width="52.8" height="60" as="geometry" />
@@ -769,9 +760,9 @@
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.094;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="_uvUFfz-k6Og6nQMRo5o-15" target="-E65_RxEzlmxlajJ-Pf2-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_uvUFfz-k6Og6nQMRo5o-17" value="event notifications" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="_uvUFfz-k6Og6nQMRo5o-16" vertex="1" connectable="0">
+        <mxCell id="_uvUFfz-k6Og6nQMRo5o-17" value="event notifications" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1" parent="_uvUFfz-k6Og6nQMRo5o-16" vertex="1" connectable="0">
           <mxGeometry x="0.3169" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-1" y="9" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-15" value="Botkube&amp;nbsp;&lt;div&gt;Monitoring&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
@@ -784,7 +775,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-19" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal;&quot; class=&quot;p1&quot;&gt;Aqua Security/&lt;/p&gt;&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal;&quot; class=&quot;p1&quot;&gt;SysDig Monitoring&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="930" y="767" width="90" height="60" as="geometry" />
+          <mxGeometry x="930" y="750" width="90" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="_uvUFfz-k6Og6nQMRo5o-18" target="-E65_RxEzlmxlajJ-Pf2-9" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -820,6 +811,30 @@
         </mxCell>
         <mxCell id="_uvUFfz-k6Og6nQMRo5o-36" value="RBAC" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="969" y="377" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dlfTBMziWyScQio23Eez-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="dlfTBMziWyScQio23Eez-1" target="6eMF-F5gttXPWiPwgopi-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dlfTBMziWyScQio23Eez-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://aquasecurity.github.io/kube-bench/v0.6.15/images/kube-bench.jpg;" vertex="1" parent="1">
+          <mxGeometry x="255" y="1190" width="175" height="47.6" as="geometry" />
+        </mxCell>
+        <mxCell id="dlfTBMziWyScQio23Eez-3" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="820" y="1190" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-E65_RxEzlmxlajJ-Pf2-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="dlfTBMziWyScQio23Eez-3" vertex="1">
+          <mxGeometry width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-E65_RxEzlmxlajJ-Pf2-2" value="Teams&#xa;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_512px.png;" parent="dlfTBMziWyScQio23Eez-3" vertex="1">
+          <mxGeometry x="20" y="37.5" width="53.67" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-E65_RxEzlmxlajJ-Pf2-4" value="Slack" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.freebiesupply.com/logos/thumbs/2x/slack-logo-thumb.png;" parent="dlfTBMziWyScQio23Eez-3" vertex="1">
+          <mxGeometry x="100" y="37.5" width="60" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="dlfTBMziWyScQio23Eez-8" value="Kubesec" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://casual-hosting.s3.amazonaws.com/kubesec-logo.png;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="170" y="1171" width="72.38" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dlfTBMziWyScQio23Eez-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.103;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dlfTBMziWyScQio23Eez-8" target="6eMF-F5gttXPWiPwgopi-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

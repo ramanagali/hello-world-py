@@ -207,13 +207,16 @@ Save the hello-world-py/git-hooks/pre-commit.sh script to.git/hooks/pre-commit i
     - **Security Benefits**:
     - Ensures that no security features or critical functionality are broken post-deployment.
     - Validates the end-to-end behavior of the application in a realistic environment
-13. **Push to DockerHub**:
+13. **Mutation Testing**: 
+    - PITest introduces code mutations to assess test robustness
+
+14. **Push to DockerHub**:
     - Pushes the verified Docker image to DockerHub.
     - Tags and pushes the image using credentials (DOCKER_USERNAME, DOCKER_PASSWORD).
     - **Security Benefits**:
     - Ensures images are stored in a secure and trusted registry.
     - Enables continuous monitoring for vulnerabilities in the published image
-14. **Generate Artifact**:
+15. **Generate Artifact**:
     - Package and archive reports and outputs for auditing and sharing into a .tar.gz file.
     - Collects files (e.g., SBOM, vulnerability reports, logs) and packages them into a .tar.gz archive.
     - **Security Benefits**:
@@ -472,8 +475,17 @@ Agro CD will be installed in the Centralized & Dedicated Kubernetes Cluster, whi
 
 - Leverage opensource troubleshooting and monitoring tool “botkube” which helps to provide live event alerts namespaces and events.
 
+### Monitoring and Runtime Security
+- Coralogix monitors the web application’s UI for errors, performance, and logs
+
 ### Setup Prometheus Server & Grafana Operator to monitor Kubernetes workloads
 
 - Setup Prometheus & Grafana Operator framework in dedicated monitoring server/cluster
 - Monitor metrics, time series data
 - Configure scrape targets and service discovery for audit, history and monitoring purpose
+
+### SSL Certification and Application Access
+- SSL certificates are installed to secure web application access.
+
+### Application Penetration Testing
+- A manual penetration test using Burp Suite Professional is performed to identify any vulnerabilities that automated tests may have missed
