@@ -1,4 +1,4 @@
-﻿# Case Study: Secure Cloud Deployment CICD
+﻿# DevSecOps CICD pipeline - Secure Cloud Deployment 
 
 # About
 
